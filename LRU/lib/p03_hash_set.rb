@@ -1,7 +1,7 @@
 require_relative 'p01_int_set'
 
 
-class HashSet
+class HashSet < ResizingIntSet
   attr_reader :count
 
   def initialize(num_buckets = 8)
@@ -21,11 +21,6 @@ class HashSet
 
   def include?(key)
     self[key].include?(key)
-    
-  end
-
-  def remove(key)
-    @count -= 1 if self[key].delete(key)
   end
 
   private
@@ -38,13 +33,4 @@ class HashSet
     @store.length
   end
 
-  def resize!
-    temp = Array.new(num_buckets * 2) { Array.new }
-    @store.each do |bucket|
-      bucket.each do |el|
-        temp[el % temp.length] << el
-      end 
-    end 
-    @store = temp
-  end
 end

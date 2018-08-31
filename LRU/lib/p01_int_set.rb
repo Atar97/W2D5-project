@@ -75,8 +75,7 @@ class ResizingIntSet < IntSet
   end
   # 
   def remove(num)
-    @count -= 1 if self.include?(num)
-    super 
+    @count -= 1 if self[num].delete(num)
   end
 
   private

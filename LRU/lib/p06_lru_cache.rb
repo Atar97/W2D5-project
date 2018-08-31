@@ -22,10 +22,19 @@ class LRUCache
   end
 
   private
-
-  def calc!(key)
-    # suggested helper method; insert an (un-cached) key
-  end
+  #add things to my cache
+  
+  # def add!(key)
+  #   if @map.include?(key)
+  #     @map[key].remove
+  #     @store.append(key, @map[key])
+  #   elsif @store.count == @max - 1
+  #     @store.first.remove
+  #     @store.append(key, @map[key])
+  #   else 
+  #     @store.append(key, )
+  # 
+  # end
 
   def update_node!(node)
     # suggested helper method; move a node to the end of the list
